@@ -1,10 +1,10 @@
-import { formatPrice } from '../../utils/formatPrice';
-import { IProduct } from '../types/Products'
 
 import { ShoppingCartSimple } from 'phosphor-react'
 
 import style from './style.module.scss'
-import { useCart } from '../hooks/useCart';
+import { useCart } from '../../hooks/useCart';
+import { IProduct } from '../../types';
+import { formatPrice } from '../../util/formatPrice';
 
 interface ICardProps {
     product: IProduct;

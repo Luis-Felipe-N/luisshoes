@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react"
-import { Trash,  Minus, Plus} from "phosphor-react"
+import { Trash } from "phosphor-react"
 
-import { useCart } from "../components/hooks/useCart"
-import { IProduct } from "../components/types/Products"
-
-import { formatPrice } from "../utils/formatPrice"
-import style from "../style/pages/Cart.module.scss"
+import style from "../styles/pages/Cart.module.scss"
+import { IProduct } from "../types";
+import { useCart } from "../hooks/useCart";
+import { formatPrice } from "../util/formatPrice";
 
 interface IProductCart {
     amount: number;

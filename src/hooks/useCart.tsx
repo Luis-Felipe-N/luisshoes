@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
-import { IProduct } from "../types/Products";
 
 interface ICartProviderProps {
     children: ReactNode

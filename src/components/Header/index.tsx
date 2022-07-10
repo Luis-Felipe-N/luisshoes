@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { useCart } from '../hooks/useCart'
 import style from './style.module.scss'
 
 import { BagSimple } from 'phosphor-react'
 import { Link } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
 
 export function Header() {
     const [totalItemsAmount, setTotalItemsAmount] = useState(0)

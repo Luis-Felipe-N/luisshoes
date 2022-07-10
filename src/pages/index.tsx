@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card } from "../components/Card";
-import { useCart } from "../components/hooks/useCart";
-import { IProduct } from "../components/types/Products";
+import { IProduct } from "../types";
 
 export function Home() {
     const [products, setProducts] = useState<IProduct[]>()
