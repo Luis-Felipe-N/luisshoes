@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #141419;
+    --white: #FFFFFF;
+
+    --purple-500: #7059BD;
+    --purple-700: #6650A9;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+body, button, input {
+    font-family: 'Roboto', sans-serif;    
+}
+
+.wrapper {
+    max-width: 70rem;
+    margin-inline: auto;
+    padding: 0 5%;
+}
+
+.container__cards {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}

@@ -1,0 +1,18 @@
+.header {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    > a {
+        color: var(--white);
+        // text-align:;
+        display: flex;
+        gap: .5rem;
+        text-align: right;
+    }
+}

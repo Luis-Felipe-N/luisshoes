@@ -1,32 +1,34 @@
-import React from 'react';
+import { useEffect, useState } from 'react'
+import { useCart } from '../hooks/useCart'
+import style from './style.module.scss'
+
+import { BagSimple } from 'phosphor-react'
 import { Link } from 'react-router-dom';
-import { MdShoppingBasket } from 'react-icons/md';
 
-import logo from '../../assets/images/logo.svg';
-import { Container, Cart } from './styles';
-import { useCart } from '../../hooks/useCart';
+export function Header() {
+    const [totalItemsAmount, setTotalItemsAmount] = useState(0)
+    const { cartItemsAmount } = useCart()
 
-const Header = (): JSX.Element => {
-  // const { cart } = useCart();
-  // const cartSize = // TODO;
+    useEffect(() => {
+        if (cartItemsAmount) {
+            const total = cartItemsAmount.reduce((previous, current) => previous + current.amount, 0)
+            setTotalItemsAmount(total)
+        }
+    }, [cartItemsAmount])
 
-  return (
-    <Container>
-      <Link to="/">
-        <img src={logo} alt="Rocketshoes" />
-      </Link>
-
-      <Cart to="/cart">
-        <div>
-          <strong>Meu carrinho</strong>
-          <span data-testid="cart-size">
-            {/* {cartSize === 1 ? `${cartSize} item` : `${cartSize} itens`} */}
-          </span>
-        </div>
-        <MdShoppingBasket size={36} color="#FFF" />
-      </Cart>
-    </Container>
-  );
-};
-
-export default Header;
+    
+    return (
+        <header className={"wrapper " + style.header}>
+            <Link to={'/'}>
+                <h1>LuisShoes</h1>
+            </Link>
+            <Link to={'/cart'}>
+                <div>
+                    <p>Meu carrinho</p>
+                    <span>{totalItemsAmount} itens</span>
+                </div>
+                <BagSimple size={35} />
+            </Link>
+        </header>
+    )
+}
